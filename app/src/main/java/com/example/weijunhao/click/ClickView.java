@@ -9,6 +9,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 
 import static android.view.MotionEvent.ACTION_DOWN;
 import static android.view.MotionEvent.ACTION_MOVE;
@@ -18,7 +19,7 @@ import static android.view.MotionEvent.ACTION_UP;
  * Created by WEI JUNHAO on 2017/5/16.
  */
 
-public class ClickView extends View {
+public class ClickView extends android.support.v7.widget.AppCompatButton {
     public ClickView(Context context) {
         super(context);
     }
@@ -31,11 +32,6 @@ public class ClickView extends View {
     public ClickView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    public ClickView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
     }
 
     private void init() {
@@ -74,6 +70,6 @@ public class ClickView extends View {
     public boolean dispatchTouchEvent(MotionEvent event) {
         Log.d("wjh", "view dispatchTouchEvent: " + event.getAction());
         return super.dispatchTouchEvent(event);
-        //return false;
+        //return true;
     }
 }

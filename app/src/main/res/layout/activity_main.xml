@@ -5,13 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.weijunhao.click.MainActivity">
 
     <com.example.weijunhao.click.ClickView
         android:id="@+id/clivk_view"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="131dp"
+        android:layout_gravity="center"
         android:background="@color/colorAccent"/>
 
 </com.example.weijunhao.click.CustomViewGroup>

@@ -7,6 +7,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import static android.view.MotionEvent.ACTION_DOWN;
 import static android.view.MotionEvent.ACTION_UP;
@@ -15,7 +16,7 @@ import static android.view.MotionEvent.ACTION_UP;
  * Created by WEI JUNHAO on 2017/5/16.
  */
 
-public class CustomViewGroup extends ViewGroup {
+public class CustomViewGroup extends LinearLayout {
     public CustomViewGroup(Context context) {
         super(context);
     }
@@ -33,17 +34,13 @@ public class CustomViewGroup extends ViewGroup {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 
-    @Override
-    protected void onLayout(boolean changed, int l, int t, int r, int b) {
-
-    }
-
     /**
      * @param ev
      * @return
      */
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
+        Log.d("wjh", "ViewGroup dispatchTouchEvent: " + ev.getAction());
         return super.dispatchTouchEvent(ev);
     }
 
@@ -55,6 +52,7 @@ public class CustomViewGroup extends ViewGroup {
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         Log.d("wjh", "ViewGroup onInterceptTouchEvent: " + ev.getAction());
         return super.onInterceptTouchEvent(ev);
+        //return true;
     }
 
     /**
@@ -76,5 +74,6 @@ public class CustomViewGroup extends ViewGroup {
                 break;
         }
         return super.onTouchEvent(event);
+        //return true;
     }
 }
